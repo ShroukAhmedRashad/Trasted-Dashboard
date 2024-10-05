@@ -34,8 +34,7 @@ import "./Dashboard.css"; // Import the CSS file
 import { green, purple } from "@mui/material/colors";
 // Responsive Grid container style
 const GridContainerStyle = styled(Grid)(({ theme }) => ({
-  marginTop: theme.spacing(2),
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(3),
 }));
 
 // InfoCard component with hover effect
@@ -94,48 +93,49 @@ const Dashboard = () => (
           fontSize: 40,
           fontWeight: "bold",
           color: "#293241",
-          mt: 8,
           textAlign: "center",
+          mb:3
         }}
       >
         Dashboard Home
       </Typography>
     </Grid>
-    <GridContainerStyle container spacing={2}>
-      {/* Info Cards with Icons */}
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <InfoCard
-          title="Total Visits"
-          value="12,345"
-          icon={<People />}
-          style={{ backgroundColor: "#ee6c4d", color: "white" }}
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <InfoCard
-          title="Conversion Rate"
-          value="30%"
-          icon={<BarChart />}
-          style={{ backgroundColor: "#3c6e71", color: "white" }}
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <InfoCard
-          title="New Users"
-          value="789"
-          icon={<AccessTime />}
-          style={{ backgroundColor: "#284b63", color: "white" }}
-        />
-      </Grid>
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <InfoCard
-          title="Most Used Courses"
-          value="5"
-          icon={<SourceIcon />}
-          style={{ backgroundColor: "#293241", color: "white" }}
-        />
-      </Grid>
-    </GridContainerStyle>
+    <GridContainerStyle container spacing={3}> {/* Changed from spacing={2} to spacing={1} */}
+  {/* Info Cards with Icons */}
+  <Grid item xs={12} sm={6} md={4} lg={3}>
+    <InfoCard
+      title="Total Visits"
+      value="12,345"
+      icon={<People />}
+      style={{ backgroundColor: "#ee6c4d", color: "white" }}
+    />
+  </Grid>
+  <Grid item xs={12} sm={6} md={4} lg={3}>
+    <InfoCard
+      title="Conversion Rate"
+      value="30%"
+      icon={<BarChart />}
+      style={{ backgroundColor: "#3c6e71", color: "white" }}
+    />
+  </Grid>
+  <Grid item xs={12} sm={6} md={4} lg={3}>
+    <InfoCard
+      title="New Users"
+      value="789"
+      icon={<AccessTime />}
+      style={{ backgroundColor: "#284b63", color: "white" }}
+    />
+  </Grid>
+  <Grid item xs={12} sm={6} md={4} lg={3}>
+    <InfoCard
+      title="Most Used Courses"
+      value="5"
+      icon={<SourceIcon />}
+      style={{ backgroundColor: "#293241", color: "white" }}
+    />
+  </Grid>
+</GridContainerStyle>
+
     
     {/* charts */}
     <Grid container spacing={2}>

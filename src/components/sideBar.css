@@ -1,6 +1,7 @@
 /* Drawer animation */
 .MuiDrawer-paper {
     transition: width 0s ease-in-out;
+
   }
 
   /* Submenu animation */

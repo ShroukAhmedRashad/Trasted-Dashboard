@@ -142,7 +142,7 @@ const FAQ = () => {
 
   return (
     <Box sx={{ width: '100%', maxWidth: 800, margin: '0 auto' }}>
-      <Typography variant="h4" gutterBottom align="center" sx={{mt:8}}>
+      <Typography variant="h4" gutterBottom align="center" >
         Frequently Asked Questions
       </Typography>
 

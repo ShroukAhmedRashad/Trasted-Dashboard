@@ -8,6 +8,8 @@ import {
   Alert,
   IconButton,
   Grid,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -15,10 +17,10 @@ const AddNewUser = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [age, setAge] = useState("");
+  const [role, setRole] = useState(""); // New state for role
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
-  const [snackbarSeverity, setSnackbarSeverity] = useState("success"); // Default to success
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,9 +29,9 @@ const AddNewUser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSnackbarOpen(false); // Close Snackbar on new submit
+    setSnackbarOpen(false);
 
-    if (!username || !email || !password || !age) {
+    if (!username || !email || !password || !role) { // Validate role
       setSnackbarMessage("All fields are required.");
       setSnackbarSeverity("error");
       setSnackbarOpen(true);
@@ -49,7 +51,7 @@ const AddNewUser = () => {
     }
 
     // Logic to add the new user
-    console.log("New user added:", { username, email, password, age });
+    console.log("New user added:", { username, email, password, role });
 
     // Display success message
     setSnackbarMessage("User added successfully!");
@@ -60,7 +62,7 @@ const AddNewUser = () => {
     setUsername("");
     setEmail("");
     setPassword("");
-    setAge("");
+    setRole(""); // Reset role
   };
 
   const handleSnackbarClose = (event, reason) => {
@@ -75,7 +77,6 @@ const AddNewUser = () => {
       sx={{
         maxWidth: 500,
         mx: "auto",
-        mt: 8,
         p: 4,
         borderRadius: 2,
         boxShadow: 2,
@@ -85,7 +86,7 @@ const AddNewUser = () => {
       <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
         <Typography
           sx={{
-            fontSize: { xs: 28, md: 36 }, // Responsive font size
+            fontSize: { xs: 28, md: 36 },
             fontWeight: "bold",
             color: "#293241",
             m: "auto",
@@ -112,7 +113,7 @@ const AddNewUser = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
+            />   
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -123,7 +124,21 @@ const AddNewUser = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Grid>
-         
+          <Grid item xs={12}>
+            <Select
+              fullWidth
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              displayEmpty
+              inputProps={{ 'aria-label': 'Without label' }}
+            >
+              <MenuItem value="" disabled>
+                Select Role
+              </MenuItem>
+              <MenuItem value="admin">Admin</MenuItem>
+              <MenuItem value="editor">Instructor</MenuItem>
+            </Select>
+          </Grid>
           <Grid item xs={12}>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Button
@@ -134,8 +149,8 @@ const AddNewUser = () => {
                   width: "300px",
                   bgcolor: "#ee6c4d",
                   "&:hover": {
-                    bgcolor: "#ee6c4d", // Set hover color to match the normal color
-                    boxShadow: "none", // Remove shadow on hover
+                    bgcolor: "#ee6c4d",
+                    boxShadow: "none",
                   },
                 }}
               >
@@ -146,7 +161,6 @@ const AddNewUser = () => {
         </Grid>
       </form>
 
-      {/* Snackbar for feedback messages */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={6000}

@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import SideBar from "./components/SideBar";
 import { getDesignTokens } from "./theme";
-import TopBar from "./components/TopBar";
 import { Outlet } from "react-router-dom";
 
 export default function MiniDrawer() {
@@ -26,7 +25,6 @@ export default function MiniDrawer() {
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <SideBar open={open} handleDrawerClose={handleDrawerClose} />
-          <TopBar open={open} handleDrawerOpen={handleDrawerOpen} setMode={setMode} />
         <Box sx={{ flexGrow: 1 }}>
           <Box component="main" sx={{ p: 3 }}>
             <Outlet />

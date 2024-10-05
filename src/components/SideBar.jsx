@@ -18,9 +18,7 @@ import AddRoadIcon from "@mui/icons-material/AddRoad";
 import EditRoadIcon from "@mui/icons-material/EditRoad";
 import LiveHelpIcon from "@mui/icons-material/LiveHelp";
 
-
-import './sideBar.css'
-
+import "./sideBar.css";
 
 const routes = [
   {
@@ -28,8 +26,7 @@ const routes = [
     name: "Home",
     icon: <FaHome />,
   },
- 
-  
+
   {
     path: "/Analytics",
     name: "Analytics",
@@ -68,34 +65,10 @@ const routes = [
         name: "Add New User",
         icon: <PersonAddIcon />,
       },
-      
     ],
   },
 
-
-
-  {
-    path: "/courses",
-    name: "Courses",
-    icon: <DataObjectIcon />,
-    subRoutes: [
-      {
-        path: "/managecourse",
-        name: "Manage Course ",
-        icon: <CodeIcon />,
-      },
-      {
-        path: "/addnewcourse",
-        name: "Add New Course",
-        icon: <CodeIcon />,
-      },
-      
-    ],
-  },
-
-
-
-
+  
 
   {
     path: "/roadmap",
@@ -112,7 +85,6 @@ const routes = [
         name: "Add New Roadmap",
         icon: <EditRoadIcon />,
       },
-    
     ],
   },
 
@@ -129,8 +101,6 @@ const routes = [
     icon: <BiCog />,
     exact: true,
   },
-  
-  
 ];
 
 const SideBar = ({ children }) => {
@@ -241,13 +211,20 @@ const SideBar = ({ children }) => {
               })}
             </section>
           </motion.div>
-
+          <motion.main
+        animate={{
+          marginLeft: isOpen ? "170px" : "45px",
+          transition: { duration: 0.5 },
+        }}
+        className="main-content"
+      >
+        {children}
+      </motion.main>
           <main>{children}</main>
         </div>
       </div>
     </>
   );
 };
-
 
 export default SideBar;

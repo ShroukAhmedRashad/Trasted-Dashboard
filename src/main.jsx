@@ -19,8 +19,6 @@ import LineChart from "./pages/Analystics/LineChart";
 import AllUsers from "./pages/form/users/AllUsers";
 import AddNewUser from "./pages/form/users/AddNewUser";
 import Profile from "./pages/form/users/Profile";
-import ManageCourses from "./pages/form/courses/ManageCourses";
-import AddNewCourse from "./pages/form/courses/AddNewCourse";
 import Faq from "./pages/faq/FAQ";
 import Setting from './pages/setting/Setting'
 import ManageRoadmap from "./pages/form/roadmap/ManageRoadmap";
@@ -36,8 +34,6 @@ const router = createBrowserRouter(
       <Route path="allusers" element={<AllUsers />} />
       <Route path="addnewuser" element={<AddNewUser />} />
       <Route path="profile" element={<Profile />} />
-      <Route path="managecourse" element={<ManageCourses />} />
-      <Route path="addnewcourse" element={<AddNewCourse />} />
       <Route path="manageroadmap" element={<ManageRoadmap />} />
       <Route path="addnewroadmap" element={<AddNewRoadmap />} />
       <Route path="faq" element={<Faq />} />

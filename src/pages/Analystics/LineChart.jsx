@@ -72,7 +72,7 @@ export default function Line() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ height: "75vh", mx: "auto", mt: 8 }}>
+    <Box sx={{ height: "75vh", mx: "auto", }}>
       
       <ResponsiveLine
         data={data}

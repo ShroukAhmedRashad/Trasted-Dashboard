@@ -13,7 +13,7 @@ export default function Bar() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ height: "70vh", mt: 8 }}>
+    <Box sx={{ height: "70vh", }}>
       <Typography>BarChart</Typography>
       <ResponsiveBar
         data={data}

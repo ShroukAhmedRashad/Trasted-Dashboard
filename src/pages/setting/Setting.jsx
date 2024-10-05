@@ -46,7 +46,6 @@ const EditProfile = () => {
         width: '100%',
         maxWidth: 600,
         margin: 'auto',
-        mt:10
       }}
     >
       <Avatar

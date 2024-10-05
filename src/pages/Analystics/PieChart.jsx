@@ -13,7 +13,7 @@ export default function PieChart() {
   const theme = useTheme();
 
   return (
-    <Box sx={{ height: "75vh", mt: 8 }}>
+    <Box sx={{ height: "75vh",  }}>
       <ResponsivePie
         data={data}
         colors={[
